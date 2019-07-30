@@ -151,8 +151,10 @@ period = time.time()
 
 energy = np.zeros((NUM_PTS_AZIM, NUM_PTS_POLAR))
 
-max_val = 2**15
-max_energy_val = max_val
+if mic.bf_pdm:
+    max_energy_val = 2**4
+else:
+    max_energy_val = 2**15
 
 angles_polar_deg = ANGLES_POLAR*180./np.pi
 angles_azim_deg = ANGLES_AZIM*180./np.pi
@@ -227,7 +229,6 @@ def plot_data(i):
                 energy[j,i] = np.std(data_int)/max_energy_val
             except IndexError:
                 continue
-
 
     # Surface Plotting
     X = energy * np.cos(PHI) * np.cos(THETA)
