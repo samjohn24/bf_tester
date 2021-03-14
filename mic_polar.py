@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python2
 """
  +FHDR-------------------------------------------------------------------------
  FILE NAME      : mic_energy.py
@@ -10,8 +10,8 @@
 """
 
 import sys
-sys.path.append('../../../hardware/ip/avalon_st_jtag/system-console/jtag_client/python/jtag_client')
-sys.path.append('../../../hardware/ip/mic_if/hal/avalon_st_jtag/python')
+sys.path.append('../ip/avalon_st_jtag/system-console/jtag_client/python/jtag_client')
+sys.path.append('../ip/mic_if/hal/avalon_st_jtag/python')
 
 import matplotlib.pyplot as plt
 import numpy as np

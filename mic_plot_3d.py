@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python2
 """
  +FHDR-------------------------------------------------------------------------
  FILE NAME      : mic_energy.py
@@ -10,15 +10,15 @@
 """
 
 import sys
-sys.path.append('../../../hardware/ip/avalon_st_jtag/system-console/jtag_client/python/jtag_client')
-sys.path.append('../../../hardware/ip/mic_if/hal/avalon_st_jtag/python')
+sys.path.append('../ip/avalon_st_jtag/system-console/jtag_client/python/jtag_client')
+sys.path.append('../ip/mic_if/hal/avalon_st_jtag/python')
 
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.animation as animation
 from matplotlib import cm, colors
 import time
-import Queue
+import queue as Queue
 import jtag_client as jtag
 import mic_if_hal as mic_if
 import mpl_toolkits.mplot3d.axes3d as axes3d
@@ -284,7 +284,7 @@ def plot_data(i):
 
     ax.legend(loc='upper right')
 
-    print 'period: %.2f ms' %((time.time()-period)*1e3) 
+    print('period: %.2f ms' %((time.time()-period)*1e3))
     period = time.time()
 
 # =======================
